@@ -2,6 +2,7 @@ package br.com.springboot.controller;
 
 import br.com.springboot.bo.ClienteBO;
 import br.com.springboot.model.Cliente;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -26,10 +27,15 @@ public class ClienteController {
 
     // salva os dados no banco de dados
     // @ModelAttribute Cliente cliente -> monta um obj do tipo cliente vindo do formulário
+    // BindingResult ->
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String salva(@ModelAttribute Cliente cliente) {
+    public String salva(@Valid @ModelAttribute Cliente cliente) {
+        if (cliente.getId() != null) {
+            clienteBO.atualiza(cliente);
+            return "redirect:/clientes";
+        }
         clienteBO.insere(cliente);
-        return "/cliente/formulario";
+        return "redirect:/clientes";
     }
 
     // listagem de clientes
