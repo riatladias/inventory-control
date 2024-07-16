@@ -61,6 +61,4 @@ public class ClienteController {
         clienteBO.ativa(cliente);
         return "redirect:/clientes";
     }
-
-
 }
