@@ -4,8 +4,10 @@ import br.com.springboot.bo.ClienteBO;
 import br.com.springboot.model.Cliente;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +31,10 @@ public class ClienteController {
     // @ModelAttribute Cliente cliente -> monta um obj do tipo cliente vindo do formulário
     // BindingResult ->
     @RequestMapping(value = "", method = RequestMethod.POST)
-    public String salva(@Valid @ModelAttribute Cliente cliente) {
+    public String salva(@Valid @ModelAttribute Cliente cliente, BindingResult result) {
+        if (result.hasErrors())
+            return "cliente/formulario";
+
         if (cliente.getId() != null) {
             clienteBO.atualiza(cliente);
             return "redirect:/clientes";
