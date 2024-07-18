@@ -1,17 +1,16 @@
 package br.com.springboot.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class AplicacaoController {
-    @RequestMapping(value = {"","/"}, method = RequestMethod.GET)
+    @GetMapping({"","/"})
     public String index(){
         return "index";
     }
 
-    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
+    @GetMapping("/login")
     public String login(){
         return "login";
     }

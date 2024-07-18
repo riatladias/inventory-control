@@ -4,7 +4,6 @@ import br.com.springboot.bo.ClienteBO;
 import br.com.springboot.model.Cliente;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.bind.BindResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
