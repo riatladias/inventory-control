@@ -11,7 +11,7 @@
 </div>
 
 ## 🔥 Descrição
-API REST para controle de Empresas, Vagas e aplicações, utilizando dos principais pacotes do Spring Boot para persistência, segurança, autorização entre outros conceitos.
+
 
 ## ⚙️ Pré-requisitos
 - Java 17
