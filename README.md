@@ -16,19 +16,15 @@ API REST para controle de Empresas, Vagas e aplicações, utilizando dos princip
 ## ⚙️ Pré-requisitos
 - Java 17
 - Maven
-- Docker
 
 ## 🛠️ Guia de instalação
 
 ```bash
 # Clonar repositório
-git clone https://github.com/riatladias/gestao_vagas.git
+git clone https://github.com/riatladias/inventory-control.git
 
 # Entrar na pasta do projeto
-cd gestao_vagas
-
-# Executar o cantainer do banco de dados PostgreSQL
-docker-compose up -d
+cd springboot
 
 # Executar o projeto
 mvn spring-boot:run
@@ -38,94 +34,21 @@ mvn spring-boot:run
 - Java
 - Spring Boot
 - Maven
-- Docker
 - JPA / Hibernate
-- PostgreSQL
-- Spring Security / JWT
-- Swagger
+- H2 Database
+- Spring Security
+- Thymeleaf
 
 ## Lib's
-- Jakarta
+- Validation
 - Lombok
-- JWT
 
 ## 📋 Instruções de uso / Documentação
 
 Toda documentação pode ser acessada:
-http://localhost:8080/swagger-ui/index.html#/
+http://localhost:8080
 
-### 📍 Endpoints - Candidate
-
-​
-| route                           | descrição                                                                                                      |
-| ------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| <kbd>POST /candidate/</kbd>     | Essa função é reponsável por cadastrar um candidato, veja [detalhes](#post-create-detail)                       |
-| <kbd>POST /candidate/auth</kbd> | rota de autenticação do candidato, veja [detalhes](#post-auth-detail)                                           |
-| <kbd>GET /candidate/</kbd>      | Essa função é reponsável por buscar as informações do perfil do candidato, veja [detalhes](#get-profile-detail) |
-
----
-<h3 id="post-create-detail">POST /candidate/</h3>
-
-**REQUEST**
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "Riatla Dias",
-  "username": "Dias",
-  "email": "riatla@example.com",
-  "password": "admin@1234",
-  "description": "Desenvolvedor Java",
-  "curriculum": "string"
-}
-```
-
-**RESPONSE**
-```json
-{
-  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-  "name": "Riatla Dias",
-  "username": "Dias",
-  "email": "riatla@example.com",
-  "password": "admin@1234",
-  "description": "Desenvolvedor Java",
-  "curriculum": "string",
-  "createdAt": "2024-06-14T19:35:03.093Z"
-}
-```
----
-
-<h3 id="post-auth-detail">POST /candidate/auth</h3>
-
-**REQUEST**
-```json
-{
-  "password": "string",
-  "username": "string"
-}
-```
----
-
-<h3 id="get-profile-detail">GET /candidate/</h3>
-
-**RESPONSE**
-```json
-{
-  "name": "teste",
-  "age": 20,
-  "email": "lorem@gmail.com"
-}
-```
-
-
-### 📍 Endpoints - Company
-
-
-
-
-
-
-
-
+### 📍 Endpoints - 
 
 
 
@@ -136,7 +59,8 @@ http://localhost:8080/swagger-ui/index.html#/
 
 
 ## Modelo conceitual
-![Modelo Conceitual](/assets/diagrama.png)
+
+[//]: # (![Modelo Conceitual]&#40;/assets/diagrama.png&#41;)
 
 ## Implatação em produção (Em construção)
 
